@@ -1,12 +1,16 @@
 import Link from "next/link"
-import { Truck, Package, Home, Box, Phone, CheckCircle } from "lucide-react"
+import { Truck, Package, Home, Box, CheckCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardTitle } from "@/components/ui/card"
+import { Header } from "@/components/header"
+import { FAQSection } from "@/components/faq-section"
+import { ContactSection } from "@/components/contact-section"
 
 export default function Component() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
+      <Header />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
@@ -136,27 +140,13 @@ export default function Component() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
-          <div className="container px-4 md:px-6 text-center">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Ready to Move?</h2>
-              <p className="max-w-[700px] mx-auto text-gray-300 md:text-xl">
-                Contact us today for a free quote and let PMG handle your transport needs with expertise and care.
-              </p>
-              <Button asChild className="bg-white text-gray-900 hover:bg-gray-200">
-                <Link href="#">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call Us Now
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+        <FAQSection />
+
+        <ContactSection />
       </main>
 
       {/* Footer */}
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-gray-900 text-white">
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-gray-800 text-white">
         <p className="text-xs text-gray-400">&copy; {new Date().getFullYear()} PMG Transport. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link className="text-xs hover:underline underline-offset-4 text-gray-400" href="#">
